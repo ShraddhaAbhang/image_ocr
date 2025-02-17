@@ -5,8 +5,11 @@ from PIL import Image
 def preprocess_image(image_path, threshold=True):
     """
     Preprocess the image: Convert to grayscale and apply thresholding.
+    :param image_path: Path to the image file
+    :param threshold: Apply thresholding to remove noise (default: True)
+    :return: Preprocessed PIL Image
     """
-    img = cv2.imread("delivery_challan_sample.jpeg")
+    img = cv2.imread(image_path)
 
     # Convert to grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
